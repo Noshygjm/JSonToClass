@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   UMain in '..\..\source\Units\UMain.pas' {FMain},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  UJSonToClass in '..\..\source\Units\UJSonToClass.pas';
 
 {$R *.res}
 
