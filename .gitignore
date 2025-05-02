@@ -1,0 +1,44 @@
+# Git ignore settings for Delphi 12.3 VCL project
+
+# Delphi project and IDE files
+*.dproj.user
+*.dproj.local
+*.dsk
+*.local
+*.identcache
+*.history
+
+# Compiled units and intermediate files
+*.dcu
+*.dcp
+*.obj
+*.tds
+*.ppu
+*.map
+
+# Binary outputs
+*.bpl
+*.exe
+*.dll
+
+# Backup and temp files
+*~
+*.~*
+*.bak
+
+# Build folders
+/bin/
+/obj/
+/output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and coverage
+*.log
+.coverage
+
+# Optional: ignore user-specific configs
+*.cfg
+*.cfg~
