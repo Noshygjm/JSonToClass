@@ -17,6 +17,9 @@ type
     mmoJSon: TMemo;
     mmoClass: TMemo;
     btnGenerate: TButton;
+    Panel5: TPanel;
+    Label1: TLabel;
+    edtClassName: TEdit;
     procedure btnGenerateClick(Sender: TObject);
   private
     { Private declarations }
@@ -35,26 +38,36 @@ Uses UJSonToClass;
 
 procedure TFMain.btnGenerateClick(Sender: TObject);
 var
-  JSONValue: TJSONValue;
-  JSONObject: TJSONObject;
-  Output: TStrings;
+  vJSONValue: TJSONValue;
+  vJSONObject: TJSONObject;
+  vClassName: String;
 begin
+  mmoClass.Lines.Clear;
+
+  vClassName := Trim(edtClassName.Text);
+
+  if vClassName.Length <= 0 then
+  begin
+    ShowMessage('Enter the class name. (Required)');
+    Exit;
+  end;
+
   try
-    JSONValue := TJSONObject.ParseJSONValue(mmoJSON.Text);
-    if not Assigned(JSONValue) then
+    vJSONValue := TJSONObject.ParseJSONValue(mmoJSON.Text);
+    if not Assigned(vJSONValue) then
       raise Exception.Create('El texto no es un JSON válido.');
 
-    if JSONValue is TJSONObject then
+    if (vJSONValue is TJSONObject) or (vJSONValue is TJSONArray) then
     begin
-      JSONObject := JSONValue as TJSONObject;
+      vJSONObject := vJSONValue as TJSONObject;
       // Ahora podés usar JSONObject con tu clase generadora
-      GenerateFromJSONObject(JSONObject, mmoClass.Lines, 'TRoot');
+      GenerateFromJSONObject(vJSONObject, mmoClass.Lines, vClassName);
     end
     else
-      raise Exception.Create('El JSON raíz debe ser un objeto.');
+      raise Exception.Create('The root JSON must be an object.');
 
   finally
-    JSONValue.Free;
+    vJSONValue.Free;
   end;
 end;
 

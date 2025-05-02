@@ -5,12 +5,6 @@ interface
 uses
   System.SysUtils, System.Classes, System.JSON, System.JSON.Types, System.JSON.Utils ;
 
-/// <summary>
-/// Genera definiciones de clases Pascal a partir de un objeto JSON.
-/// </summary>
-/// <param name="AObject">TJSONObject raíz a procesar.</param>
-/// <param name="AOutput">TStrings donde se irán añadiendo las líneas de código.</param>
-/// <param name="ClassName">Nombre de la clase a generar para el objeto raíz.</param>
 procedure GenerateFromJSONObject(const AObject: TJSONObject; AOutput: TStrings; const ClassName: string = 'TRoot');
 
 implementation

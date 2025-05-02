@@ -21,6 +21,40 @@ object FMain: TFMain
     BevelInner = bvLowered
     TabOrder = 0
     ExplicitWidth = 448
+    object Panel5: TPanel
+      Left = 648
+      Top = 2
+      Width = 271
+      Height = 37
+      Align = alRight
+      BevelInner = bvLowered
+      TabOrder = 0
+      object Label1: TLabel
+        AlignWithMargins = True
+        Left = 5
+        Top = 10
+        Width = 65
+        Height = 22
+        Margins.Top = 8
+        Align = alLeft
+        Caption = 'Class Name:'
+        ExplicitTop = 5
+        ExplicitHeight = 15
+      end
+      object edtClassName: TEdit
+        AlignWithMargins = True
+        Left = 76
+        Top = 5
+        Width = 190
+        Height = 27
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 144
+        ExplicitTop = 10
+        ExplicitWidth = 121
+        ExplicitHeight = 23
+      end
+    end
   end
   object Panel2: TPanel
     Left = 0
