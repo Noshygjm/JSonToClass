@@ -30,6 +30,7 @@
 /bin/
 /obj/
 /output/
+/__history/
 
 # OS files
 .DS_Store

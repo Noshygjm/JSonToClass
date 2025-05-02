@@ -10,7 +10,9 @@ object FMain: TFMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Menu = MainMenu1
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -124,6 +126,35 @@ object FMain: TFMain
       Align = alClient
       ScrollBars = ssBoth
       TabOrder = 0
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 488
+    Top = 56
+    object JSOn1: TMenuItem
+      Caption = 'File'
+      object JSon2: TMenuItem
+        Caption = 'JSon'
+      end
+      object JSon3: TMenuItem
+        Caption = 'Class'
+      end
+      object Exit1: TMenuItem
+        Caption = 'Exit'
+        OnClick = Exit1Click
+      end
+    end
+    object Class1: TMenuItem
+      Caption = 'Tools'
+    end
+    object Help1: TMenuItem
+      Caption = 'Help'
+      object Help2: TMenuItem
+        Caption = 'Help'
+      end
+      object Help3: TMenuItem
+        Caption = 'About'
+      end
     end
   end
 end
